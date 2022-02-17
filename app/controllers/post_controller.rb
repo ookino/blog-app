@@ -1,5 +1,5 @@
 class PostController < ApplicationController
-   def list
+   def index
    end
    
    def show
