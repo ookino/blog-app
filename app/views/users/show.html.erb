@@ -1,1 +1,15 @@
-<h1>User</h1>
+<h1 class='font-mono text-2xl font-bold text-indigo-900 mb-4'>Author Details</h1>
+<div class='flex flex-col gap-4'>
+<%= render "shared/header" %>
+<%= render "show_bio" %>
+<div class='flex flex-col  rounded-lg font-mono gap-3 outline outline-1 outline-indigo-300 w-full p-4 bg-white'>
+<h2 class='text-lg text-gray-700 font-bold'>Recent Posts:</h2>
+<% @posts.each do |post| %>
+<%= render "post", post: post%>
+<% end %>
+</div>
+<a href="<%= @user.id %>/posts" class="btn btn-primary">
+<button class='bg-indigo-500 p-2 text-white rounded-lg drop-shadow-md w-full'>See all posts<button>
+</a>
+</div>
+

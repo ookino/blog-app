@@ -1,1 +1,6 @@
-<h1>Users</h1>
+<h1 class='font-mono text-2xl font-bold text-indigo-900 mb-4'>Users</h1>
+<div id="users" class="users">
+<% @users.each do |user| %>
+<%= render user%>
+<% end %>
+</div>
