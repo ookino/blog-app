@@ -12,6 +12,12 @@
   </head>
 
   <body class="bg-gray-50">
+<% flash.each do |type, message| %>
+<div class="<%= flash_notify(type)%> px-4 py-3 rounded relative" role="alert">
+  <span class="block sm:inline"><%= message %></span>
+</div>
+<% end %>
+<% flash.clear %>
   <h1>Blog App</h1>
   <main class='p-8'>
     <%= yield %>
