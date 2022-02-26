@@ -1,3 +1,4 @@
+<%= link_to "posts/#{post.id}" do %>
 <div class='flex flex-col  rounded-lg font-mono gap-3 outline outline-1 outline-indigo-300 w-full p-4 bg-white shadow-sm mb-4'>
 <h2 class='text-lg text-gray-700'>
 <strong><%= post.title %></strong>
@@ -6,16 +7,17 @@
 
 <div class='flex gap-4'>
 <div class='p-2 outline outline-1 outline-indigo-300 rounded-lg font-bold'>
-Comments: 0
+Comments: <%= post.comments_counter%>
 </div>
 <div class='p-2 outline outline-1 outline-indigo-300 rounded-lg font-bold'>
-Likes: 0
+Likes: <%= post.likes_counter%>
 </div>
 </div>
 
 <div class='flex flex-col  rounded-lg font-mono gap-1 outline outline-1 outline-indigo-300 w-full p-4 bg-indigo-50'>
 <% post.comments.each do |comment| %>
-<p class='text-sm'><span class='font-bold'><%= comment.user_id %></span> <%= comment.text%></p>
+<p class='text-sm'><span class='font-bold'><%= comment.user.name %></span> <%= comment.text%></p>
 <%end%>
 </div>
 </div>
+<% end %>
