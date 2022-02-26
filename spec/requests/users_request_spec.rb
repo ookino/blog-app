@@ -17,7 +17,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /show' do
-    before(:example) { get('/users/2') }
+    before(:example) { get('/users/4') }
     it 'should return correct response status' do
       expect(response).to have_http_status(:ok)
     end
@@ -27,7 +27,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should check if correct placeholder is shown' do
-      expect(response.body).to include('User')
+      expect(response.body).to include('Author Details')
     end
   end
 end
