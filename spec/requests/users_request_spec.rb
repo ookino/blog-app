@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
-    before(:example) { get(users_path) }
+    before(:each) { get(users_path) }
     it 'should return correct response status' do
       expect(response).to have_http_status(:ok)
     end
@@ -17,7 +17,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /show' do
-    before(:example) { get('/users/4') }
+    before(:each) { get('/users/1') }
     it 'should return correct response status' do
       expect(response).to have_http_status(:ok)
     end

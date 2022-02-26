@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  user = User.find(4)
+  user = User.find(1)
 
   before(:each) { user.save }
 
@@ -38,7 +38,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'returns the last 3 posts' do
-      expect(user.recent_3_posts.length).to eq(2)
+      expect(user.recent_3_posts.length).to eq(3)
     end
   end
 end

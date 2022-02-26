@@ -45,7 +45,7 @@ RSpec.describe Post, type: :model do
     before(:each) { 5.times { |i| Comment.new(text: "Comment #{i}", post_id: post.id) } }
 
     it 'returns last 5 comments' do
-      expect(user.recent_3_posts.length).to eq(2)
+      expect(user.recent_3_posts.length).to eq(3)
     end
   end
 end

@@ -33,6 +33,7 @@ bundle install
 Setup database with:
 
 ```
+rails db:seed # for dummy data
 rails db:create
 rails db:migrate
 ```
