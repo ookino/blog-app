@@ -18,9 +18,9 @@ cd blog-app
 
 ### Prerequisites
 
-Ruby
-Rails
-PostgresSQL
+- Ruby
+- Rails
+- PostgresSQL
 
 ### Setup
 
