@@ -35,6 +35,7 @@ Setup database with:
 ```
 rails db:create
 rails db:migrate
+rails db:seed # for dummy data
 ```
 
 ### Usage
