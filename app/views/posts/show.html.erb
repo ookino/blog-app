@@ -1,1 +1,28 @@
-<h1>Post</h1>
+<div class='flex flex-col  rounded-lg font-mono gap-3 outline outline-1 outline-indigo-300 w-full p-4 bg-white shadow-sm mb-4'>
+<div class='flex flex-row justify-between items-center'>
+<div class='flex flex-row items-center gap-4'>
+<h2 class='text-lg text-gray-700'>
+<strong><%= @post.title %></strong>
+</h2>
+<%= form_with url: "#{@post.id}/likes", scope: :like do |form| %>
+  <%= form.submit "Like Post", class:'bg-indigo-300 hover:bg-indigo-400 text-white p-2 rounded-lg inline-flex items-center text-sm' %>
+<% end %>
+</div>
+<div class='flex gap-4'>
+<div class='p-2 outline outline-1 outline-indigo-300 rounded-lg font-bold'>
+Comments: <%= @post.comments_counter || 0 %>
+</div>
+<div class='p-2 outline outline-1 outline-indigo-300 rounded-lg font-bold'>
+Likes: <%= @post.likes_counter || 0 %>
+</div>
+</div>
+</div>
+<p class='text-gray-600'><%= @post.text %></p>
+</div>
+<div class='flex flex-col  rounded-lg font-mono gap-1 outline outline-1 outline-indigo-300 w-full p-4 bg-indigo-50'>
+<% @comments.each do |comment| %>
+<p class='text-sm'><span class='font-bold'><%= comment.user.name %>: </span><%= comment.text%></p>
+<%end%>
+</div>
+
+<%= render 'add_comment', post: @posts%>
