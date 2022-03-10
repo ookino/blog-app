@@ -13,7 +13,7 @@ class User < ApplicationRecord
     Post.last(3)
   end
 
-  def admin?(requested_role)
-    role == requested_role.to_s
+  def admin?
+    :role == 'admin'
   end
 end

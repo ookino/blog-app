@@ -7,6 +7,12 @@
 <%= form_with url: "#{@post.id}/likes", scope: :like do |form| %>
   <%= form.submit "Like Post", class:'bg-indigo-300 hover:bg-indigo-400 text-white p-2 rounded-lg inline-flex items-center text-sm' %>
 <% end %>
+   <%if can? :destroy, @post %>
+          <%= button_to "Delete Post",  user_post_path, :method => :delete, data: {confirm: 'Are You Sure You Want to Delete This Post'},  class:'inline-block text-sm px-4 py-2 leading-none border rounded text-white bg-red-500  hover:bg-red-700 hover:text-white ' %>
+   <%end%>
+
+
+
 </div>
 <div class='flex gap-4'>
 <div class='p-2 outline outline-1 outline-indigo-300 rounded-lg font-bold'>
@@ -21,6 +27,7 @@ Likes: <%= @post.likes_counter || 0 %>
 </div>
 <div class='flex flex-col  rounded-lg font-mono gap-1 outline outline-1 outline-indigo-300 w-full p-4 bg-indigo-50'>
 <% @comments.each do |comment| %>
+      <%= link_to "delete comment",  new_user_registration_path, class:'inline-block text-sm  leading-none text-indigo underline hover:underline-offset-4 hover:text-red-500' %>
 <p class='text-sm'><span class='font-bold'><%= comment.user.name %>: </span><%= comment.text%></p>
 <%end%>
 </div>

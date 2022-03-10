@@ -31,4 +31,14 @@ class PostsController < ApplicationController
     @user = @post.user
     @comments = @post.comments
   end
+
+  def destroy
+    post = Post.find(params[:id])
+    user = User.find(params[:user_id])
+    user.posts_counter -= 1
+    post.destroy!
+    user.save
+    flash[:alert] = 'You have deleted this post!'
+    redirect_to user_posts_path(current_user.id)
+  end
 end
