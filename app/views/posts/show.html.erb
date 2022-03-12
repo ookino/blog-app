@@ -25,10 +25,16 @@ Likes: <%= @post.likes_counter || 0 %>
 </div>
 <p class='text-gray-600'><%= @post.text %></p>
 </div>
-<div class='flex flex-col  rounded-lg font-mono gap-1 outline outline-1 outline-indigo-300 w-full p-4 bg-indigo-50'>
+<div class='flex flex-col  rounded-lg font-mono gap-4 outline outline-1 outline-indigo-300 w-full p-4 bg-indigo-50'>
 <% @comments.each do |comment| %>
-      <%= link_to "delete comment",  new_user_registration_path, class:'inline-block text-sm  leading-none text-indigo underline hover:underline-offset-4 hover:text-red-500' %>
-<p class='text-sm'><span class='font-bold'><%= comment.user.name %>: </span><%= comment.text%></p>
+<div class='flex flex-row items-center'>
+<p class='text-sm mr-2'><span class='font-bold'><%= comment.user.name %>: </span><%= comment.text%></p>
+  <%if can? :destroy, @post %>
+<span> | </span>
+ <%= link_to "delete comment",  user_post_comment_path(comment_id: comment.id,  post_id: @post.id),  data: {  turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"}, class:'ml-2 inline-block text-sm  leading-none text-indigo underline hover:underline-offset-4 hover:text-red-500' %>
+ <%end%>
+</div>
 <%end%>
 </div>
 
