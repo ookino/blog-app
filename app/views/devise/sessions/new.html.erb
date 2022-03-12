@@ -3,12 +3,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name),:html => {:class => 'flex flex-col gap-6 w-full, font-mono'}) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'p-3 mt-2 w-full outline outline-1 outline-indigo-300 rounded-lg' %>
+    <%= f.email_field  :email, :placeholder => 'Email', autofocus: true, autocomplete: "email", class: 'p-3 mt-2 w-full outline outline-1 outline-indigo-300 rounded-lg' %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: 'p-3 mt-2 w-full outline outline-1 outline-indigo-300 rounded-lg' %>
+    <%= f.password_field :password,:placeholder => 'Password', autocomplete: "new-password", class: 'p-3 mt-2 w-full outline outline-1 outline-indigo-300 rounded-lg' %>
   </div>
 
   <% if devise_mapping.rememberable? %>
