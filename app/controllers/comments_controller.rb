@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     if create_comment.save
       redirect_to "/users/#{@post.user_id}/posts/#{@post.id}", success: 'Success!'
     else
-      render :new, alert: 'Error: failed to save comment'
+      redirect_to "/users/#{@post.user_id}/posts/#{@post.id}", error: 'failed to save comment'
     end
   end
 
