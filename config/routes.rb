@@ -7,11 +7,4 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
   end
-
-  # get '/users/:id', to: 'users#show'
-  # get '/users/:id/posts', to: 'posts#index'
-  # get '/users/:id/posts/new', to: 'posts#new', as: 'new_post' 
-  # post '/users/:id/posts', to: 'posts#create' as: 'create_post'
-  # get '/users/:id/posts/:id', to: 'posts#show'
-
 end
