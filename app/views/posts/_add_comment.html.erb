@@ -1,0 +1,5 @@
+<h1 class='font-mono text-lg font-bold text-indigo-900 mb-2 mt-4'>Leave a comment</h1>
+<%= form_with class:'flex flex-col gap-6', url: "#{@post.id}/comments", scope: :comment do |form| %>
+  <%= form.text_area :text, class:'p-3 outline outline-1 outline-indigo-300 rounded-lg', placeholder: "Leave a comment", rows: "3" %>
+  <%= form.submit "Submit", class:'bg-indigo-500 p-3 text-white rounded-lg drop-shadow-md' %>
+<% end %>
