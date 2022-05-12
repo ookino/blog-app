@@ -1,0 +1,15 @@
+<div class="flex flex-row  rounded-lg font-mono gap-4">
+<%# <%= image_tag @user.photo, class:"rounded-lg w-36 h-24 object-cover"%> 
+<div class='rounded-lg outline outline-1 outline-indigo-300 w-full p-4 bg-white'>
+<h2 class='text-xl text-gray-700'>
+<strong><%= @user.name %></strong>
+</h2>
+<p class='text-gray-400'>number of posts:
+ <span class='font-bold text-indigo-500'> <%= @user.posts_counter || 0 %></span>
+<p>
+</div>
+</div>
+
+
+
+

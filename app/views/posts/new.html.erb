@@ -1,0 +1,6 @@
+<h1 class='font-mono text-2xl font-bold text-indigo-500 mb-4'>New post</h1>
+<%= form_with class:'flex flex-col gap-6', url: user_posts_path, scope: :data do |form| %>
+  <%= form.text_field   :title, class:'p-3 outline outline-1 outline-indigo-300 rounded-lg', placeholder: "Post title" %>
+  <%= form.text_area :text, class:'p-3 outline outline-1 outline-indigo-300 rounded-lg', placeholder: "Post body", rows: "12" %>
+  <%= form.submit "Post", class:'bg-indigo-500 p-3 text-white rounded-lg drop-shadow-md' %>
+<% end %>

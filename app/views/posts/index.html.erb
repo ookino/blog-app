@@ -1,0 +1,12 @@
+<h1 class='font-mono text-2xl font-bold text-indigo-900 mb-4'>Author Posts</h1>
+<div class='flex flex-col gap-4'>
+<%= render "shared/header" %>
+
+<div class='p-4 bg-white rounded-lg mb-4 outline outline-1 outline-indigo-300'>
+<% @posts.each do |post| %>
+<%= render "post_comment", post: post %>
+<% end %>
+</div>
+
+<button class='bg-indigo-500 p-2 text-white rounded-lg drop-shadow-md'>Pagination<button>
+</div>
