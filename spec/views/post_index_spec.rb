@@ -9,6 +9,7 @@ RSpec.describe 'Login', type: :feature do
       fill_in placeholder: 'Email', with: 'yaseerokino@lk.com'
       fill_in placeholder: 'Password', with: '12345678'
       click_button 'Log in'
+      visit user_posts_path @user.id
 
       @post1 = Post.create(title: 'The mean one',
                            text: 'The tale of a mean one ',
@@ -73,7 +74,8 @@ RSpec.describe 'Login', type: :feature do
     end
 
     it "When I click on a post, it redirects me to that post's show page." do
-      expect(page).to have_content 'This is the story of a crazy one'
+      click_link(@post1.id)
+      expect(current_path).to eq "/users/#{@user.id}/posts/#{@post1.id}"
     end
   end
 end

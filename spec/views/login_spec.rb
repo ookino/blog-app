@@ -24,7 +24,7 @@ RSpec.describe 'Login', type: :feature do
       fill_in placeholder: 'Email', with: ''
       fill_in placeholder: 'Password', with: ''
       click_button 'Log in'
-      expect(page).to have_content('')
+      expect(page).to have_content('Invalid Email or password.')
     end
 
     it 'Fill email and password inputs' do
